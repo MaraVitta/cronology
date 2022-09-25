@@ -1,0 +1,115 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background: #010101;
+    font-family: 'Readex Pro', sans-serif;
+	color: rgb(139, 1, 1);
+}
+
+.titulo {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 20vh;
+	font-size: 15px;
+    box-shadow: 0px 0px 30px 10px rgba(173,0,0,1);
+    -webkit-box-shadow: 0px 0px 30px 10px rgba(173,0,0,1);
+    -moz-box-shadow: 0px 0px 30px 10px rgba(173,0,0,1);
+	text-transform: uppercase;
+	background: rgb(180,87,0);
+    background: radial-gradient(circle, rgba(180,87,0,1) 9%, rgba(75,40,18,1) 66%);
+}
+                                                                                       
+.container {
+	width: 90%;
+	max-width: 1200px;
+	margin: 100px auto;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+}
+
+.container::after {
+	content: "";
+	width: 2px;
+	height: 100%;
+	background: #1b3231;
+	position: absolute;
+	top: 0;
+	left: calc(50% - 1px);
+	z-index: 1;
+}
+
+.moment {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 200px;
+	position: relative;
+}
+
+.moment::after {
+	content: "";
+	display: block;
+	width: 14px;
+	height: 14px;
+	border-radius: 100px;
+	background: rgb(180,87,0);
+    background: radial-gradient(circle, rgba(180,87,0,1) 9%, rgba(75,40,18,1) 66%);
+	border: 2px solid #20061a;
+	position: absolute;
+	z-index: 2;
+	top: calc(50% - 9px);
+	left: calc(50% - 9px);	
+}
+
+.date {
+	display: flex;
+	align-items: center;
+	justify-content: start;
+	width: calc(42% + 20px);
+	font-size: 32px;
+	font-weight: normal;
+	color: rgb(139, 1, 1);
+}
+
+.picture {
+	width: 50%;
+	border: ridge 15px rgb(48, 2, 2);
+	position: relative;
+	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.picture::after {
+	content: "";
+	display: block;
+	border: 20px solid transparent;
+	border-left: 20px solid rgb(139, 1, 1);
+	position: absolute;
+	right: -50px;
+	top: calc(50% - 20px);
+}
+
+.picture img {
+	width: 100%;
+	vertical-align: top;
+}
+
+.moment:nth-child(even) {
+	flex-direction: row-reverse;
+}
+
+.moment:nth-child(even) .date {
+	justify-content: end;
+}
+
+.moment:nth-child(even) .picture::after {
+	content: "";
+	border: 20px solid transparent;
+	border-right: 20px solid rgb(139, 1, 1);
+	right: initial;
+	left: -50px;
+}
